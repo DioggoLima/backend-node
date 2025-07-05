@@ -1,0 +1,19 @@
+{
+  "name": "projetobackend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch ./src/server.js",
+    "migrations": "node ./src/infra/migrations/20252524T1155.js"
+  },
+  "keywords": [],
+  "author": "Diogo <dioggolima@live.com>",
+  "license": "ISC",
+  "description": "Projeto node.js",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "fastify": "^5.3.2",
+    "sqlite3": "^5.1.7"
+  }
+}
