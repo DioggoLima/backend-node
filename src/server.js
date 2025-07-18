@@ -1,8 +1,8 @@
 // Importação da modulo fastify
 import Fastify from 'fastify'
 const PORT = 3000;
-import { listUsers, registerNewUser, getUserById} from './routes/users.controller.js';
-import { listProducts, registerNewProduct, getProductById } from './routes/products.controller.js';
+import { listUsers, registerNewUser, getUserById, getUsers, updateUserById, deleteUserByEmail} from './routes/users.controller.js';
+import { listProducts, registerNewProduct, getProductById, getProducts, updateProductById, deleteProductById } from './routes/products.controller.js';
 
 // Inicialização do modulo fastify
 const app = Fastify({
@@ -12,9 +12,17 @@ const app = Fastify({
 app.register(listUsers, {prefix: '/v1'});
 app.register(getUserById, {prefix: '/v1'})
 app.register(registerNewUser, {prefix: '/v1'})
+app.register(getUsers, {prefix: '/v1'})
+app.register(updateUserById, {prefix: '/v1'})
+app.register(deleteUserByEmail, {prefix: '/v1'})
+
 app.register(listProducts, {prefix: '/v1'})
 app.register(getProductById, {prefix: '/v1'})
 app.register(registerNewProduct, {prefix: '/v1'})
+app.register(getProducts, {prefix: '/v1'})
+app.register(updateProductById, {prefix: '/v1'})
+app.register(deleteProductById, {prefix: '/v1'})
+
 
 app.get("/", (res, replay)=>{
     return {"server": "Hello Dev"}
